@@ -1,4 +1,6 @@
-# a program that reads 10 numbers and outputs multiplication of nonzero numbers
+#  Copyright (c) 2021. by Danil Smirnov
+#  zabanen.nu@ya.ru
+#  a program that reads 10 numbers and outputs multiplication of nonzero numbers
 counter = 1
 
 for i in range(10):
