@@ -1,29 +1,17 @@
-"""# fibonaccu
+#  Copyright (c) 2021. by Danil Smirnov
+#  zabanen.nu@ya.ru
+#  a program that reads a natural number
+#  and prints the first n numbers of the Fibonacci sequence.
+first_fibonacci = second_fibonacci = 1
 
-n = int(input())
-def fibonacci(n):
-    if n < 2:
-        return n
-    return fibonacci(n - 1) + fibonacci(n - 2)
+number = int(input())
 
-for i in range(1, n + 1):
-    print(fibonacci(i), end=' ')
-
-#a, b = b, a + b"""
-
-
-f1 = f2 = 1
-
-n = int(input())
-
-if n < 2:
+if number < 2:
     print('1')
     quit()
 
-print(f1, end=' ')
-print(f2, end=' ')
-for i in range(2, n):
-    f1, f2 = f2, f1 + f2
-    print(f2, end=' ')
-
-print()
+print(first_fibonacci, end=' ')
+print(second_fibonacci, end=' ')
+for i in range(2, number):
+    first_fibonacci, second_fibonacci = second_fibonacci, first_fibonacci + second_fibonacci
+    print(second_fibonacci, end=' ')
