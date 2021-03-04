@@ -1,14 +1,20 @@
+#  Copyright (c) 2021. by Danil Smirnov
+#  zabanen.nu@ya.ru
 # input is natural number n. write program that computes n!
-n = int(input())
 
-def factorial(n):
-    if n == 0:
+number = int(input())
+
+
+def factorial(num):
+    if num == 0:
         return 1
-    f = 1
+    factorial = 1
     i = 0
 
-    while i < n:
+    while i < num:
         i += 1
-        f *= i
-    return f
-print(factorial(n))
+        factorial *= i
+    return factorial
+
+
+print(factorial(number))
