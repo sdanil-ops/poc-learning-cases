@@ -1,5 +1,5 @@
 #  -----------------------------------------------------------
-#  Task 5.44
+#  Task 5.44 from Pilschikov
 #
 #  Count how many numbers are greater than the adjacent numbers
 #
@@ -9,8 +9,8 @@
 #  -----------------------------------------------------------
 
 
-def counter(numbers_list: list):
-    '''counter how many numbers in list are greater than the adjacent numbers'''
+def counter(numbers_list: list) -> int:
+    """counter how many numbers in list are greater than the adjacent numbers"""
     count = 0
     quantity_numbers = len(numbers_list)
     for i in range(quantity_numbers):
@@ -19,8 +19,8 @@ def counter(numbers_list: list):
     return count
 
 
-def counter_test(count):   # that func shows that all works as planed
-    '''preventive testing'''
+def counter_test(count):  # that func shows that all works as planed
+    """ preventive testing """
     print('Testing', counter.__doc__)
     print('Testcase #1:', end=' ')
     numbers_list = [1, 2, 1, 44, 5, 1, 0]
@@ -39,5 +39,12 @@ def counter_test(count):   # that func shows that all works as planed
     answer = 0
     count(numbers_list)
     print('Passed!' if count(numbers_list) == answer else 'Fail')
+
+    print('Testcase #4:', end=' ')
+    numbers_list = [-2, -1, -3, -1, -5, -3, -5]
+    answer = 3
+    count(numbers_list)
+    print('Passed!' if count(numbers_list) == answer else 'Fail')
+
 
 counter_test(counter)
