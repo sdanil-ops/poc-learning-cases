@@ -6,14 +6,16 @@
 #  email zabanen.nu@ya.ru
 #  -----------------------------------------------------------
 
-def number_separator(num: int):
+def number_separator(number: int):
     # splits number into digits
-    if num < 0:
-        num = abs(num)
-    while num != 0:
-        last_digit = num % 10
-        num = num // 10
+    number_list =[]
+    if number < 0:
+        number = abs(number)
+    while number != 0:
+        last_digit = number % 10
+        number = number // 10
         number_list.append(last_digit)
+    return number_list
 
 
 def compare_numbers(numbers: list) -> bool:
@@ -21,28 +23,21 @@ def compare_numbers(numbers: list) -> bool:
     for pos in range(len(numbers) - 1):
         for k in range(pos + 1, len(numbers)):
             if numbers[k] == numbers[pos]:
-                flag = True
-                return flag
+                return True
+    return False
 
 
-number_list = []  # define a list of digits of the entered number
+  # define a list of digits of the entered number
 print('The program will determine if the number contains the same digits')
 number = input('Input your number:\n').replace('.', '')
 
 try:
-    number_separator(int(number))
-    same = compare_numbers(number_list)  # compare numbers
-
-    if len(number_list) >= 2:  # user can also input one-digit number
+    same = compare_numbers(number_separator(int(number)))
+    not_single_digit = len(number_separator(int(number))) >= 2
+    if not_single_digit:
         print('Include same numbers' if same else 'All numbers are different')
     else:
         print('There is one digit')
+
 except ValueError:
-    number = input("You've input string, please input number:\n").replace('.', '')
-    number_separator(int(number))
-    same = compare_numbers(number_list)  # compare numbers
-
-    if len(number_list) >= 2:  # user can also input one-digit number
-        print('Include same numbers' if same else 'All numbers are different')
-    else:
-        print('There is one digit')
+    print("You've input string")
