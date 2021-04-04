@@ -6,7 +6,7 @@
 #  email zabanen.nu@ya.ru
 #  -----------------------------------------------------------
 
-def number_separator(number: int):
+def get_digits_list(number: int):
     # splits number into digits
     number_list =[]
     if number < 0:
@@ -27,13 +27,12 @@ def compare_numbers(numbers: list) -> bool:
     return False
 
 
-  # define a list of digits of the entered number
 print('The program will determine if the number contains the same digits')
 number = input('Input your number:\n').replace('.', '')
 
 try:
-    same = compare_numbers(number_separator(int(number)))
-    not_single_digit = len(number_separator(int(number))) >= 2
+    same = compare_numbers(get_digits_list(int(number)))
+    not_single_digit = len(get_digits_list(int(number))) >= 2
     if not_single_digit:
         print('Include same numbers' if same else 'All numbers are different')
     else:
