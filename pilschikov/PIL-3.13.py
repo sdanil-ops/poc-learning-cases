@@ -10,11 +10,11 @@
 import math
 
 
-def get_poligon_area(radius, edges=17):
+def get_polygon_area(radius, edges=17):
     return ((edges / 2) * radius ** 2) * math.sin((2 * math.pi) / edges)
 
 
-def get_poligon_perimetr(radius, edges=17):
+def get_polygon_perimeter(radius, edges=17):
     angle = 360 / edges
     return math.sqrt((radius ** 2) * 2 - (2 * (radius * radius)) * math.cos(angle))
 
@@ -22,6 +22,6 @@ def get_poligon_perimetr(radius, edges=17):
 radius = int(input('Введите радиус окружности:\n'))
 
 print('Площадь правильного 17 угольника вписанного в окружность:')
-print(get_poligon_area(radius))
+print(get_polygon_area(radius))
 print('Периметр правильного 17 угольника вписанного в окружность:')
-print(get_poligon_perimetr(radius))
+print(get_polygon_perimeter(radius))
