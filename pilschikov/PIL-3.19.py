@@ -6,14 +6,14 @@
 #  email zabanen.nu@ya.ru
 #  -----------------------------------------------------------
 
-def get_digits_list(number: int):
+def get_digits_list(_number: int):
     # splits number into digits
-    number_list =[]
-    if number < 0:
-        number = abs(number)
-    while number != 0:
-        last_digit = number % 10
-        number = number // 10
+    number_list = []
+    if _number < 0:
+        _number = abs(_number)
+    while _number != 0:
+        last_digit = _number % 10
+        _number = _number // 10
         number_list.append(last_digit)
     return number_list
 
