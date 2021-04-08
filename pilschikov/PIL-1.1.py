@@ -31,9 +31,11 @@ def get_arabic(roman: str) -> int:
 
 
 def get_factorial(number: int) -> int:
-    if number == 0:
-        return 1
-    return get_factorial(number - 1) * number
+    result = 1
+    while number > 1:
+        result *= number
+        number -= 1
+    return result
 
 
 def get_periodic_fraction(number, period, decimal_places=4):
