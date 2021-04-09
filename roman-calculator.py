@@ -56,5 +56,8 @@ def calculate_roman(roman: str, operator: str, _roman: str)-> str:
 
 
 
-
-print('Result is:', calculate_roman(*input('Input an expression like MDXII + MDCVI\n').split()))
+try:
+    while True:
+        print('Result is:', calculate_roman(*input('Input an expression like MDXII + MDCVI\n').split()))
+except KeyboardInterrupt:
+    print('Closing')
